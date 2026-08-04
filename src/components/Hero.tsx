@@ -11,7 +11,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="bg-white overflow-hidden">
+    <section className="overflow-hidden bg-white dark:bg-black">
       {/* Text block */}
       <div className="pt-[136px] pb-5 text-center px-6">
         <div className={cn('transition-all duration-1000 ease-out', visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}>
@@ -22,13 +22,13 @@ export default function Hero() {
             draggable={false}
           />
          
-          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-[#6e6e73] mb-6 select-none">
+          <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6e6e73] dark:text-[#86868b] select-none">
             For macOS
           </p>
-          <h1 className="text-[72px] md:text-[88px] lg:text-[96px] font-bold tracking-[-0.05em] leading-[0.97] text-[#1d1d1f] mb-7">
+          <h1 className="mb-7 text-[72px] font-bold leading-[0.97] tracking-[-0.05em] text-[#1d1d1f] dark:text-[#f5f5f7] md:text-[88px] lg:text-[96px]">
             Ship with confidence.
           </h1>
-          <p className="text-[19px] md:text-[21px] text-[#6e6e73] leading-[1.45] max-w-[400px] mx-auto mb-11">
+          <p className="mx-auto mb-11 max-w-[400px] text-[19px] leading-[1.45] text-[#6e6e73] dark:text-[#86868b] md:text-[21px]">
             Know your app is ready<br />before App Review does.
           </p>
           <Link

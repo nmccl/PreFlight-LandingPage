@@ -6,7 +6,7 @@ export default function DownloadCTA() {
   const { ref, inView } = useInView()
 
   return (
-    <section className="py-40 px-6 bg-[#1d1d1f]">
+    <section className="bg-[#1d1d1f] px-6 py-40 dark:bg-[#0a0a0a]">
       <div
         ref={ref as React.RefObject<HTMLDivElement>}
         className={cn('max-w-3xl mx-auto text-center fade-up', inView && 'in-view')}

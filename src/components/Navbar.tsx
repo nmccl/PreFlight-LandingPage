@@ -20,11 +20,11 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-2xl border-b border-black/[0.07] dark:border-white/[0.07]'
+          ? 'bg-white/70 backdrop-blur-2xl border-b border-black/[0.07] dark:border-white/[0.08] dark:bg-black/70'
           : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto flex h-15 max-w-6xl items-center justify-between px-6 sm:px-8">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:px-8">
         <Link
           to="/"
           className="text-[20px] font-bold tracking-tight text-[#1d1d1f] dark:text-white select-none"

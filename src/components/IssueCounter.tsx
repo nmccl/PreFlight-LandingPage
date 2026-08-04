@@ -40,13 +40,13 @@ export default function IssueCounter() {
   const color = stepColor[step]
 
   return (
-    <section className="py-40 px-6 bg-white">
-      <div className="max-w-xl mx-auto text-center">
+    <section className="bg-white px-6 py-40 dark:bg-black">
+      <div className="mx-auto max-w-xl text-center">
         <div
           ref={ref as React.RefObject<HTMLDivElement>}
           className={cn('fade-up', inView && 'in-view')}
         >
-          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-[#6e6e73] mb-16 select-none">
+          <p className="mb-16 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6e6e73] dark:text-[#86868b] select-none">
             Issue Detection
           </p>
 
@@ -71,7 +71,7 @@ export default function IssueCounter() {
 
           {/* Label */}
           <p
-            className="mt-4 font-medium text-[#1d1d1f]"
+            className="mt-4 font-medium text-[#1d1d1f] dark:text-[#f5f5f7]"
             style={{
               fontSize: '22px',
               opacity: show ? 1 : 0,
