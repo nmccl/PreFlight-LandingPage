@@ -21,10 +21,10 @@ export default function DownloadCTA() {
           Analyze your project before<br />App Review catches the problems.
         </p>
         <Link
-          to="/download"
+          to="/waitlist"
           className="inline-flex items-center px-8 py-[14px] rounded-full bg-white text-[#1d1d1f] text-[17px] font-medium hover:bg-[#f5f5f7] transition-colors duration-200 select-none"
         >
-          Download PreFlight
+          Join Waitlist
         </Link>
         <p className="mt-7 text-[13px] text-white/30">
           All analysis runs locally on your Mac.

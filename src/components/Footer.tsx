@@ -17,7 +17,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { label: 'Features', to: '/#features' },
-                { label: 'Download', to: '/download' },
+                { label: 'Waitlist', to: '/waitlist' },
               ].map(({ label, to }) => (
                 <li key={label}>
                   <Link to={to} className="text-[13px] text-white/50 hover:text-white transition-colors duration-150">

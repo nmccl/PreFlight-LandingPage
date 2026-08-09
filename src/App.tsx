@@ -14,7 +14,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/download" element={<Download />} />
+        <Route path="/waitlist" element={<Download />} />
       </Routes>
       <Footer />
     </div>

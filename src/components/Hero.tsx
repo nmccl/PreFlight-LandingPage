@@ -32,10 +32,10 @@ export default function Hero() {
             Know your app is ready<br />before App Review does.
           </p>
           <Link
-            to="/download"
+            to="/waitlist"
             className="inline-flex items-center px-8 py-[14px] rounded-full bg-[#1d1d1f] text-white text-[17px] font-medium hover:bg-[#424245] transition-colors duration-200 select-none"
           >
-            Download PreFlight
+            Join Waitlist
           </Link>
         </div>
       </div>
