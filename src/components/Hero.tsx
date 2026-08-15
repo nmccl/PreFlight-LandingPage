@@ -25,7 +25,7 @@ export default function Hero() {
           <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6e6e73] dark:text-[#86868b] select-none">
             For macOS
           </p>
-          <h1 className="mb-7 text-[72px] font-bold leading-[0.97] tracking-[-0.05em] text-[#1d1d1f] dark:text-[#f5f5f7] md:text-[88px] lg:text-[96px]">
+          <h1 className="mb-7 text-[65px] font-bold leading-[0.97] tracking-[-0.05em] text-[#1d1d1f] dark:text-[#f5f5f7] md:text-[80px] lg:text-[96px]">
             Ship with confidence.
           </h1>
           <p className="mx-auto mb-11 max-w-[400px] text-[19px] leading-[1.45] text-[#6e6e73] dark:text-[#86868b] md:text-[21px]">
