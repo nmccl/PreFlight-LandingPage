@@ -1,6 +1,7 @@
-import { useRef, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { cn } from '../lib/utils'
+import { CTA_LABEL, CTA_HREF } from '../lib/cta'
 
 export default function Hero() {
   const [visible, setVisible] = useState(false)
@@ -21,21 +22,21 @@ export default function Hero() {
             className="w-[100px] h-[100px] rounded-[14px] mx-auto mb-7 select-none"
             draggable={false}
           />
-         
+
           <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6e6e73] dark:text-[#86868b] select-none">
             For macOS
           </p>
           <h1 className="mb-7 text-[65px] font-bold leading-[0.97] tracking-[-0.05em] text-[#1d1d1f] dark:text-[#f5f5f7] md:text-[80px] lg:text-[96px]">
             Ship with confidence.
           </h1>
-          <p className="mx-auto mb-11 max-w-[400px] text-[19px] leading-[1.45] text-[#6e6e73] dark:text-[#86868b] md:text-[21px]">
-            Know your app is ready<br />before App Review does.
+          <p className="mx-auto mb-11 max-w-[420px] text-[19px] leading-[1.45] text-[#6e6e73] dark:text-[#86868b] md:text-[21px]">
+            Catch preventable App Review rejections<br />before you submit.
           </p>
           <Link
-            to="/waitlist"
+            to={CTA_HREF}
             className="inline-flex items-center px-8 py-[14px] rounded-full bg-[#1d1d1f] text-white text-[17px] font-medium hover:bg-[#424245] transition-colors duration-200 select-none"
           >
-            Join Waitlist
+            {CTA_LABEL}
           </Link>
         </div>
       </div>
@@ -49,7 +50,7 @@ export default function Hero() {
       >
         <img
           src="/macbook.jpg"
-          alt="PreFlight running on MacBook"
+          alt="PreFlight running on a Mac, showing a scanned project at 98% readiness"
           className="w-full select-none"
           draggable={false}
           style={{ display: 'block' }}

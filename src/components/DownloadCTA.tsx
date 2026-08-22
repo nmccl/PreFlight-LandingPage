@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useInView } from '../hooks/useInView'
 import { cn } from '../lib/utils'
+import { CTA_LABEL, CTA_HREF } from '../lib/cta'
 
 export default function DownloadCTA() {
   const { ref, inView } = useInView()
@@ -13,21 +14,21 @@ export default function DownloadCTA() {
       >
         <h2
           className="font-bold tracking-[-0.045em] leading-[1.02] text-white mb-6"
-          style={{ fontSize: 'clamp(48px, 6vw, 80px)' }}
+          style={{ fontSize: 'clamp(44px, 6vw, 72px)' }}
         >
-          Ready to ship<br />with confidence?
+          Catch it before<br />Apple does.
         </h2>
         <p className="text-[19px] text-white/50 mb-11 leading-[1.5]">
-          Analyze your project before<br />App Review catches the problems.
+          Analyze your project against your submission<br />before you submit, not after.
         </p>
         <Link
-          to="/waitlist"
+          to={CTA_HREF}
           className="inline-flex items-center px-8 py-[14px] rounded-full bg-white text-[#1d1d1f] text-[17px] font-medium hover:bg-[#f5f5f7] transition-colors duration-200 select-none"
         >
-          Join Waitlist
+          {CTA_LABEL}
         </Link>
         <p className="mt-7 text-[13px] text-white/30">
-          All analysis runs locally on your Mac.
+          PreFlight is in development. It only reads &mdash; it never submits anything on your behalf.
         </p>
       </div>
     </section>

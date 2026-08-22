@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { CTA_HREF } from '../lib/cta'
 
 export default function Footer() {
   return (
@@ -17,7 +18,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { label: 'Features', to: '/#features' },
-                { label: 'Waitlist', to: '/waitlist' },
+                { label: 'Waitlist', to: CTA_HREF },
               ].map(({ label, to }) => (
                 <li key={label}>
                   <Link to={to} className="text-[13px] text-white/50 hover:text-white transition-colors duration-150">

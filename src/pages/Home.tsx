@@ -1,7 +1,13 @@
 import Hero from '../components/Hero'
 import ReadinessScore from '../components/ReadinessScore'
-import AISummary from '../components/AISummary'
+import WhatItCatches from '../components/WhatItCatches'
+import CrossCheck from '../components/CrossCheck'
+import WorkflowComparison from '../components/WorkflowComparison'
 import IssueCounter from '../components/IssueCounter'
+import FindingReport from '../components/FindingReport'
+import AISummary from '../components/AISummary'
+import Trust from '../components/Trust'
+import Coverage from '../components/Coverage'
 import DownloadCTA from '../components/DownloadCTA'
 
 export default function Home() {
@@ -9,8 +15,14 @@ export default function Home() {
     <>
       <Hero />
       <ReadinessScore />
-      <AISummary />
+      <WhatItCatches />
+      <CrossCheck />
+      <WorkflowComparison />
       <IssueCounter />
+      <FindingReport />
+      <AISummary />
+      <Trust />
+      <Coverage />
       <DownloadCTA />
     </>
   )
