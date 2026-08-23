@@ -55,7 +55,7 @@ export default function WorkflowComparison() {
             </p>
             <div className="flex flex-wrap items-center gap-2">
               {withoutSteps.map((s, i) => (
-                <span key={s} className="flex items-center gap-2">
+                <span key={i} className="flex items-center gap-2">
                   <Chip label={s} tone="bad" />
                   {i < withoutSteps.length - 1 && <Arrow />}
                 </span>
