@@ -46,23 +46,16 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-widest text-white/30 mb-4">Connect</p>
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-white/30 mb-4">Contact</p>
             <ul className="space-y-3">
-              {[
-                { label: 'GitHub', href: 'https://github.com' },
-                { label: 'X', href: 'https://x.com' },
-              ].map(({ label, href }) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[13px] text-white/50 hover:text-white transition-colors duration-150"
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a
+                  href="mailto:contact@noahmcclung.com"
+                  className="text-[13px] text-white/50 hover:text-white transition-colors duration-150"
+                >
+                  contact@noahmcclung.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>
