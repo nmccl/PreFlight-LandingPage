@@ -1,14 +1,24 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCookieConsent } from '../hooks/useCookieConsent'
 
 export default function CookieConsentBanner() {
   const { consent, accept, reject } = useCookieConsent()
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    if (consent !== null) return
+    const timer = setTimeout(() => setVisible(true), 1000)
+    return () => clearTimeout(timer)
+  }, [consent])
 
   if (consent !== null) return null
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 px-4 pb-4 sm:px-6 sm:pb-6">
-      <div className="mx-auto flex max-w-3xl flex-col gap-4 rounded-[20px] border border-black/[0.06] bg-white/95 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur sm:flex-row sm:items-center sm:justify-between dark:border-white/[0.08] dark:bg-[#1d1d1f]/95">
+      <div
+        className={`fade-up mx-auto flex max-w-3xl flex-col gap-4 rounded-[20px] border border-black/[0.06] bg-white/95 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur sm:flex-row sm:items-center sm:justify-between dark:border-white/[0.08] dark:bg-[#1d1d1f]/95 ${visible ? 'in-view' : ''}`}
+      >
         <p className="text-[13px] leading-6 text-[#424245] dark:text-[#d1d1d6]">
           We use cookies to understand how visitors use this site. See our{' '}
           <Link to="/privacy" className="text-[#0071e3] underline-offset-4 hover:underline">
