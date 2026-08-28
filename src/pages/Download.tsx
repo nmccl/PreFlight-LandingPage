@@ -1,6 +1,13 @@
 import JoinWaitlistForm from '../components/JoinWaitlistForm'
+import { useDocumentMeta } from '../hooks/useDocumentMeta'
 
 export default function Download() {
+  useDocumentMeta(
+    'Join the Waitlist - PreFlight',
+    "Join the waitlist for PreFlight and get notified when it's available.",
+    '/waitlist'
+  )
+
   return (
     <main className="min-h-screen pt-28 pb-24 px-6 bg-white dark:bg-black">
       <div className="max-w-3xl mx-auto text-center">

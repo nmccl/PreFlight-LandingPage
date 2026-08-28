@@ -1,4 +1,12 @@
+import { useDocumentMeta } from '../hooks/useDocumentMeta'
+
 export default function Privacy() {
+  useDocumentMeta(
+    'Privacy Policy - PreFlight',
+    "PreFlight's privacy policy: what data it accesses, how it's used, and what stays local to your Mac.",
+    '/privacy'
+  )
+
   return (
     <main className="min-h-screen bg-white px-6 pb-24 pt-28 text-[#1d1d1f] dark:bg-black dark:text-[#f5f5f7]">
       <div className="mx-auto max-w-4xl">
@@ -23,6 +31,15 @@ export default function Privacy() {
             </h2>
             <p className="text-[15px] leading-8 text-[#424245] dark:text-[#d1d1d6]">
               PreFlight does not collect, sell, or share your personal information. It has no accounts, no analytics, no advertising, no tracking, and no servers of our own. Everything the app knows about you and your projects stays on your Mac, with one exception you control: if you add an App Store Connect API key, PreFlight talks directly to Apple on your behalf.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="mb-3 text-[18px] font-semibold tracking-[-0.02em]">
+              Cookies on this website
+            </h2>
+            <p className="text-[15px] leading-8 text-[#424245] dark:text-[#d1d1d6]">
+              This section is about pre-flight.info, the website you're reading now — not the PreFlight app, which has no analytics or tracking of any kind. With your consent, this website uses Google Analytics to understand aggregate traffic, such as which pages are visited and roughly where visitors come from. This sets a small number of cookies. Analytics is only enabled if you choose "Accept" in the cookie banner; if you choose "Reject" or take no action, no analytics cookies are set. You can change your choice at any time using "Cookie Preferences" in the footer.
             </p>
           </section>
 

@@ -1,4 +1,12 @@
+import { useDocumentMeta } from '../hooks/useDocumentMeta'
+
 export default function Terms() {
+  useDocumentMeta(
+    'Terms of Use - PreFlight',
+    'Terms of use for PreFlight, a macOS app that checks your project against your App Store Connect submission before you submit.',
+    '/terms'
+  )
+
   return (
     <main className="min-h-screen bg-white px-6 pb-24 pt-28 text-[#1d1d1f] dark:bg-black dark:text-[#f5f5f7]">
       <div className="mx-auto max-w-4xl">

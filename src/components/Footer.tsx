@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import { CTA_HREF } from '../lib/cta'
+import { useCookieConsent } from '../hooks/useCookieConsent'
 
 export default function Footer() {
+  const { resetConsent } = useCookieConsent()
+
   return (
     <footer className="bg-[#000] border-t border-white/[0.07] px-6 py-14">
       <div className="max-w-6xl mx-auto">
@@ -42,6 +45,15 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={resetConsent}
+                  className="text-[13px] text-white/50 hover:text-white transition-colors duration-150"
+                >
+                  Cookie Preferences
+                </button>
+              </li>
             </ul>
           </div>
 
