@@ -39,7 +39,7 @@ export default function Privacy() {
               Cookies on this website
             </h2>
             <p className="text-[15px] leading-8 text-[#424245] dark:text-[#d1d1d6]">
-              This section is about pre-flight.info, the website you're reading now — not the PreFlight app, which has no analytics or tracking of any kind. With your consent, this website uses Google Analytics to understand aggregate traffic, such as which pages are visited and roughly where visitors come from. This sets a small number of cookies. Analytics is only enabled if you choose "Accept" in the cookie banner; if you choose "Reject" or take no action, no analytics cookies are set. You can change your choice at any time using "Cookie Preferences" in the footer.
+              This section is about pre-flight.info, the website you're reading now — not the PreFlight app, which has no analytics or tracking of any kind. With your consent, this website uses PostHog to understand aggregate traffic, such as which pages are visited and roughly where visitors come from. This sets a small number of cookies. Analytics is only enabled if you choose "Accept" in the cookie banner; if you choose "Reject" or take no action, no analytics cookies are set. You can change your choice at any time using "Cookie Preferences" in the footer.
             </p>
           </section>
 

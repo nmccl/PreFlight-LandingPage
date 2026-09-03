@@ -1,36 +1,28 @@
-declare global {
-  interface Window {
-    dataLayer: unknown[]
-    gtag: (...args: unknown[]) => void
-  }
-}
+import posthog from 'posthog-js'
 
-const MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined
+const POSTHOG_KEY = import.meta.env.VITE_POSTHOG_KEY as string | undefined
+const POSTHOG_HOST =
+  (import.meta.env.VITE_POSTHOG_HOST as string | undefined) ?? 'https://us.i.posthog.com'
 
-let scriptInjected = false
+let initialized = false
 
 export function loadAnalytics() {
-  if (!MEASUREMENT_ID || scriptInjected) return
-  scriptInjected = true
+  if (!POSTHOG_KEY) return
 
-  const script = document.createElement('script')
-  script.async = true
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`
-  document.head.appendChild(script)
-
-  window.dataLayer = window.dataLayer || []
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer.push(args)
+  if (!initialized) {
+    posthog.init(POSTHOG_KEY, {
+      api_host: POSTHOG_HOST,
+      person_profiles: 'identified_only',
+      capture_pageview: true,
+    })
+    initialized = true
+  } else {
+    posthog.opt_in_capturing()
   }
-  window.gtag('js', new Date())
-  window.gtag('config', MEASUREMENT_ID, { anonymize_ip: true })
 }
 
 export function disableAnalytics() {
-  if (MEASUREMENT_ID) {
-    ;(window as unknown as Record<string, boolean>)[`ga-disable-${MEASUREMENT_ID}`] = true
-  }
-  for (const name of ['_ga', '_gid', `_ga_${MEASUREMENT_ID?.replace(/^G-/, '')}`]) {
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`
+  if (initialized) {
+    posthog.opt_out_capturing()
   }
 }
