@@ -45,6 +45,24 @@ export default function Privacy() {
 
           <section className="mb-8">
             <h2 className="mb-3 text-[18px] font-semibold tracking-[-0.02em]">
+              Feedback board
+            </h2>
+            <p className="text-[15px] leading-8 text-[#424245] dark:text-[#d1d1d6]">
+              The Feedback page lets you post ideas, vote, and reply without creating an account. To keep the board free of spam, submitting a post or reply is verified by Cloudflare Turnstile, which may process technical information such as your IP address and browser characteristics as part of that check. See Cloudflare's{' '}
+              <a
+                href="https://www.cloudflare.com/en-gb/turnstile-privacy-policy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#0071e3] underline-offset-4 hover:underline"
+              >
+                Turnstile Privacy Policy
+              </a>{' '}
+              for details.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="mb-3 text-[18px] font-semibold tracking-[-0.02em]">
               Information stored on your Mac
             </h2>
             <ul className="space-y-3 text-[15px] leading-8 text-[#424245] dark:text-[#d1d1d6]">

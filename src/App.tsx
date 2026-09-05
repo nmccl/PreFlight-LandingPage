@@ -7,6 +7,8 @@ import Home from './pages/Home'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import Download from './pages/Download'
+import Feedback from './pages/Feedback'
+import FeedbackPost from './pages/FeedbackPost'
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/waitlist" element={<Download />} />
+        <Route path="/feedback" element={<Feedback />} />
+        <Route path="/feedback/:id" element={<FeedbackPost />} />
       </Routes>
       <Footer />
       <CookieConsentBanner />
