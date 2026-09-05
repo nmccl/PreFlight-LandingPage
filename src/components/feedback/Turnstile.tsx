@@ -50,6 +50,9 @@ export default function Turnstile({ onVerify, onExpire, resetKey }: TurnstilePro
         sitekey: siteKey,
         callback: onVerify,
         'expired-callback': onExpire,
+        'error-callback': (code: string) => {
+          console.error('[Turnstile error]', code)
+        },
       })
     })
 
