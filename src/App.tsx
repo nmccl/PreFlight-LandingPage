@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Analytics from './components/Analytics'
@@ -9,12 +9,16 @@ import Terms from './pages/Terms'
 import Download from './pages/Download'
 import Feedback from './pages/Feedback'
 import FeedbackPost from './pages/FeedbackPost'
+import Review from './pages/Review'
 
 export default function App() {
+  const { pathname } = useLocation()
+  const showShell = pathname !== '/review'
+
   return (
     <div className="min-h-screen bg-white dark:bg-black text-[#1d1d1f] dark:text-[#f5f5f7]">
       <Analytics />
-      <Navbar />
+      {showShell && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<Privacy />} />
@@ -22,9 +26,10 @@ export default function App() {
         <Route path="/waitlist" element={<Download />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/feedback/:id" element={<FeedbackPost />} />
+        <Route path="/review" element={<Review />} />
       </Routes>
-      <Footer />
-      <CookieConsentBanner />
+      {showShell && <Footer />}
+      {showShell && <CookieConsentBanner />}
     </div>
   )
 }
