@@ -357,10 +357,10 @@ begin
   if v_existing then
     delete from public.post_votes
     where post_votes.post_id = p_post_id and post_votes.client_id = p_client_id;
-    update public.posts set votes_count = greatest(votes_count - 1, 0) where id = p_post_id;
+    update public.posts set votes_count = greatest(posts.votes_count - 1, 0) where id = p_post_id;
   else
     insert into public.post_votes (post_id, client_id) values (p_post_id, p_client_id);
-    update public.posts set votes_count = votes_count + 1 where id = p_post_id;
+    update public.posts set votes_count = posts.votes_count + 1 where id = p_post_id;
   end if;
 
   return query select not v_existing, posts.votes_count from public.posts where id = p_post_id;
@@ -368,3 +368,62 @@ end;
 $$;
 
 grant execute on function public.toggle_vote(uuid, uuid) to anon, authenticated;
+
+-- ---------------------------------------------------------------------------
+-- Owner notification: email me (via Loops transactional API) on every new post
+--
+-- Setup:
+--   1. select vault.create_secret('YOUR_LOOPS_API_KEY', 'loops_api_key');
+--   2. Replace YOUR_TRANSACTIONAL_ID below with the Transactional Email ID
+--      from the Loops dashboard, then re-run this CREATE OR REPLACE block.
+--
+-- Never blocks or fails the actual post insert — any error here is swallowed.
+-- ---------------------------------------------------------------------------
+
+create or replace function public._notify_new_post()
+returns trigger
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare
+  v_api_key text;
+  v_status int;
+  v_body text;
+begin
+  select decrypted_secret into v_api_key
+  from vault.decrypted_secrets
+  where name = 'loops_api_key'
+  limit 1;
+
+  if v_api_key is null then
+    return new;
+  end if;
+
+  select status, content
+  into v_status, v_body
+  from extensions.http((
+    'POST',
+    'https://app.loops.so/api/v1/transactional',
+    array[extensions.http_header('Authorization', 'Bearer ' || v_api_key)],
+    'application/json',
+    jsonb_build_object(
+      'transactionalId', 'YOUR_TRANSACTIONAL_ID',
+      'email', 'noah_mcclung@icloud.com',
+      'dataVariables', jsonb_build_object(
+        'title', new.title,
+        'details', new.details
+      )
+    )::text
+  )::extensions.http_request);
+
+  return new;
+exception when others then
+  return new;
+end;
+$$;
+
+drop trigger if exists posts_notify_owner on public.posts;
+create trigger posts_notify_owner
+after insert on public.posts
+for each row execute function public._notify_new_post();

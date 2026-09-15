@@ -5,6 +5,7 @@ import { CTA_LABEL, CTA_HREF } from '../lib/cta'
 const links = [
   { to: '/', label: 'Home' },
   { to: '/feedback', label: 'Feedback' },
+  { to: '/waitlist', label: 'Join Waitlist' },
   { to: '/privacy', label: 'Privacy' },
   { to: '/terms', label: 'Terms' },
 ]
@@ -53,12 +54,14 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <Link
-          to={CTA_HREF}
+        <a
+          href={CTA_HREF}
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-[12px] font-medium px-[14px] py-[6px] rounded-full bg-[#1d1d1f] dark:bg-white text-white dark:text-[#1d1d1f] hover:bg-[#424245] dark:hover:bg-[#f5f5f7] transition-colors duration-150 select-none"
         >
           {CTA_LABEL}
-        </Link>
+        </a>
       </div>
     </header>
   )

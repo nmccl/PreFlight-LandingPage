@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useInView } from '../hooks/useInView'
 import { cn } from '../lib/utils'
 import { CTA_LABEL, CTA_HREF } from '../lib/cta'
@@ -21,14 +20,16 @@ export default function DownloadCTA() {
         <p className="text-[19px] text-white/50 mb-11 leading-[1.5]">
           Analyze your project against your submission<br />before you submit, not after.
         </p>
-        <Link
-          to={CTA_HREF}
+        <a
+          href={CTA_HREF}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center px-8 py-[14px] rounded-full bg-white text-[#1d1d1f] text-[17px] font-medium hover:bg-[#f5f5f7] transition-colors duration-200 select-none"
         >
           {CTA_LABEL}
-        </Link>
+        </a>
         <p className="mt-7 text-[13px] text-white/30">
-          PreFlight is in development. It only reads &mdash; it never submits anything on your behalf.
+          Available now on TestFlight. It only reads &mdash; it never submits anything on your behalf.
         </p>
       </div>
     </section>

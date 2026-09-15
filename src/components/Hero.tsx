@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { cn } from '../lib/utils'
 import { CTA_LABEL, CTA_HREF } from '../lib/cta'
 
@@ -32,12 +31,14 @@ export default function Hero() {
           <p className="mx-auto mb-11 max-w-[420px] text-[19px] leading-[1.45] text-[#6e6e73] dark:text-[#86868b] md:text-[21px]">
             Catch preventable App Review rejections<br />before you submit.
           </p>
-          <Link
-            to={CTA_HREF}
+          <a
+            href={CTA_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-[14px] rounded-full bg-[#1d1d1f] text-white text-[17px] font-medium hover:bg-[#424245] transition-colors duration-200 select-none"
           >
             {CTA_LABEL}
-          </Link>
+          </a>
         </div>
       </div>
 

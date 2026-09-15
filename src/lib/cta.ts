@@ -1,3 +1,2 @@
-// Swap these two lines when PreFlight launches to change every CTA at once.
-export const CTA_LABEL = 'Join Waitlist'
-export const CTA_HREF = '/waitlist'
+export const CTA_LABEL = 'Download Beta'
+export const CTA_HREF = 'https://testflight.apple.com/join/CGCAPxqs'
