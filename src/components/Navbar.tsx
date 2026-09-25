@@ -5,7 +5,7 @@ import { CTA_LABEL, CTA_HREF } from '../lib/cta'
 const links = [
   { to: '/', label: 'Home' },
   { to: '/feedback', label: 'Feedback' },
-  { to: '/waitlist', label: 'Join Waitlist' },
+  { to: '/waitlist', label: 'Updates' },
   { to: '/privacy', label: 'Privacy' },
   { to: '/terms', label: 'Terms' },
 ]

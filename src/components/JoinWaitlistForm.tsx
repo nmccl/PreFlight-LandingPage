@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { isValidEmail } from "../lib/utils";
 
 const INIT = "INIT";
 const SUBMITTING = "SUBMITTING";
@@ -10,8 +11,8 @@ const formStates = [INIT, SUBMITTING, ERROR, SUCCESS] as const;
 const formStyles = {
   id: "cmsl9g8ac2axy0j1akr5nhh84",
   placeholderText: "you@example.com",
-  buttonText: "Join Waitlist",
-  successMessage: "You're on the list.",
+  buttonText: "Get Updates",
+  successMessage: "You're in.",
   userGroup: "",
 };
 
@@ -415,8 +416,8 @@ export default function SignUpFormReact() {
               }}
             >
               {formState === SUBMITTING
-                ? "Joining…"
-                : "Join"}
+                ? "Submitting…"
+                : "Notify me"}
             </button>
           </form>
 
@@ -447,6 +448,3 @@ export default function SignUpFormReact() {
   );
 }
 
-function isValidEmail(email: string) {
-  return /.+@.+/.test(email);
-}

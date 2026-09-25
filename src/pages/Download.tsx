@@ -3,20 +3,20 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta'
 
 export default function Download() {
   useDocumentMeta(
-    'Join the Waitlist - PreFlight',
-    "Join the waitlist for PreFlight and get notified when it's available.",
+    'Stay Updated - PreFlight',
+    'Get release notes and updates from PreFlight delivered to your inbox.',
     '/waitlist'
   )
 
   return (
     <main className="min-h-screen pt-28 pb-24 px-6 bg-white dark:bg-black">
       <div className="max-w-3xl mx-auto text-center">
-        <p className="text-[12px] font-medium tracking-[0.14em] uppercase text-[#0071e3] mb-5">Join the waitlist</p>
+        <p className="text-[12px] font-medium tracking-[0.14em] uppercase text-[#0071e3] mb-5">Stay in the loop</p>
         <h1 className="text-[56px] font-bold tracking-[-0.04em] leading-[1.05] text-[#1d1d1f] dark:text-white mb-6">
-          Request access to PreFlight
+          Get updates from PreFlight
         </h1>
         <p className="text-[19px] text-[#6e6e73] mb-10">
-          PreFlight is launching soon. Add your email and we&apos;ll let you know when access is available.
+          Release notes, tips, and news. No spam, unsubscribe anytime.
         </p>
         <JoinWaitlistForm />
       </div>
