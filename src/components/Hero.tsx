@@ -42,7 +42,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* MacBook product shot — the hero itself */}
       <div
         className={cn(
           'max-w-[1500px] mx-auto px-1 md:px-2 transition-all duration-1000 ease-out delay-300',
